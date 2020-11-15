@@ -8,10 +8,10 @@ return (
       <tbody>
       <tr>
           <td className="text-center" scope="col">Employee</td>
-          <td className="text-center" scope="col" onClick={props.handleClick}>Name</td>
-          <td className="text-center" scope="col" onClick={props.handleClick}>Phone</td>
-          <td className="text-center" scope="col"onClick={props.handleClick}>Email</td>
-          <td className="text-center" scope="col"onClick={props.handleClick}>DOB</td>
+          <td className="text-center" scope="col" name = "name" onClick={props.handleClick}>Name</td>
+          <td className="text-center" scope="col" name = "phone" onClick={props.handleClick}>Phone</td>
+          <td className="text-center" scope="col" name = "email" onClick={props.handleClick}>Email</td>
+          <td className="text-center" scope="col" name = "dob" onClick={props.handleClick}>DOB</td>
         </tr>
         <tr>
           <td className="text-center" scope="col"><img src={props.picture}/></td>

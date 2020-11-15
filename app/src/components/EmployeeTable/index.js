@@ -7,6 +7,7 @@ class EmployeeTable extends Component {
     state = {
         employees: [{}],
         search: "",
+        clicked: "",
         filteredEmployees: [{}],
         sortBy: "asc",
         sorted: false,
@@ -32,6 +33,27 @@ class EmployeeTable extends Component {
         this.setState({ filteredEmployees: filteredEmployees });
         this.setState({ search: search });
         this.setState({ sorted: true });
+    }
+    
+    handleClick(event) {
+        event.preventDefault();
+        let { clicked } = this.state.clicked;
+        console.log(clicked);
+        let { employees } = this.state.employees;
+        console.log(employees);
+        if(clicked === "name"){
+            console.log("sort by name")
+        }
+        else if(clicked === "phone"){
+            console.log("sort by phone")
+        }
+        else if(clicked === "name"){
+            console.log("sort by email")
+        }
+        else if(clicked === "name"){
+            console.log("sort by dob")
+        }
+
     }
 
     returnEmployees() {
