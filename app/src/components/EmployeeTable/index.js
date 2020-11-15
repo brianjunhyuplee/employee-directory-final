@@ -50,10 +50,23 @@ class EmployeeTable extends Component {
                 </div>
             );
         }
-        else
-            return;
+        else{
+            return (
+                <div>
+                    {this.state.employees.map(employee => (
+                        <EmployeeTableTemplate
+                            picture={employee.picture.medium}
+                            name={employee.name.first + " " + employee.name.last}
+                            phone={employee.phone}
+                            email={employee.email}
+                            dob={employee.dob.date}
+                        />
+                    ))}
+                </div>
+            )
+        }
     }
-
+    return;
 }
 export default EmployeeTable;
 
