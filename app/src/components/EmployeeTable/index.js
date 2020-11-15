@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import EmployeeTableTemplate from "../EmployeeTableTemplate"
 import Api from "../../utils/Api"
+import SearchBar from "../SearchBar";
 
 class EmployeeTable extends Component {
     state = {
@@ -8,7 +9,6 @@ class EmployeeTable extends Component {
         search: "",
         filteredEmployees: [{}],
         sorted: false,
-        loaded: false,
     }
     //use componentDidMount to require Dom Nodes
     componentDidMount() {
@@ -50,7 +50,7 @@ class EmployeeTable extends Component {
                 </div>
             );
         }
-        else{
+        else {
             return (
                 <div>
                     {this.state.employees.map(employee => (
@@ -63,10 +63,18 @@ class EmployeeTable extends Component {
                         />
                     ))}
                 </div>
-            )
+            );
         }
     }
-    return;
+    render() {
+        return (
+            <div>
+                <SearchBar 
+                handleInputChange = {this.handleInputChange}/>
+                {this.sortBy}
+            </div>
+        );
+    }
 }
 export default EmployeeTable;
 
