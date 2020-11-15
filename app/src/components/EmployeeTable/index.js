@@ -1,28 +1,32 @@
 import React, { Component } from "react";
-import SearchBar from "../SearchBar";
-import EmployeeTableTemplate from "../EmployeeTableTemplate.js"
+import EmployeeTableTemplate from "../EmployeeTableTemplate"
 import Api from "../../utils/Api"
 
-class Search extends Component{
+class EmployeeTable extends Component{
     state = {
         employees: [{}],
         search: "",
         filteredEmployees: [{}],
+        
     }
-
+//use componentDidMount to require Dom Nodes
+componentDidMount() {
+    Api.returnEmployees().then(res => this.setState({ employees: res.data.results}));
+}
 
 handleSubmit(event) {
     event.preventDefault();
 
     let { search } = this.state.search;
-    const lowerCaseEmployees = search.toLowerCase();
+    const lowerCaseSearch = search.toLowerCase();
     let { employees } = this.state.employees;
-    let filtered = employees.filter(employee => {
-        if (employee.name.first.toLowerCase.includes(lowerCaseEmployees)||employee.name.last.toLowerCase().includes(lowerCaseEmployees)){
+    let filteredEmployees = employees.filter(employee => {
+        if (employee.name.first.toLowerCase.includes(lowerCaseSearch)||employee.name.last.toLowerCase().includes(lowerCaseSearch)){
         return employee;
         }
     });
-    this.setState({ filtered: filtered });
+    this.setState({ filteredEmployees: filteredEmployees });
+    this.setState({ search : search});
 }
 
 returnEmployees() {
@@ -42,5 +46,5 @@ returnEmployees() {
 }
 
 }
-export default EmployeeTableTemplate;
+export default EmployeeTable;
 
