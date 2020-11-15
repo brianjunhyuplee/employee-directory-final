@@ -15,7 +15,7 @@ class EmployeeTable extends Component {
         Api.returnEmployees().then(res => this.setState({ employees: res.data.results }));
     }
 
-    handleSubmit(event) {
+    handleInputChange(event) {
         event.preventDefault();
         let { search } = this.state.search;
         console.log(search);
