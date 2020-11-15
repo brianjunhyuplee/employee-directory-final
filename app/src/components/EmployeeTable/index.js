@@ -24,9 +24,8 @@ class EmployeeTable extends Component {
         let { employees } = this.state.employees;
         console.log(employees);
         let filteredEmployees = employees.filter(employee => {
-            if (employee.name.first.toLowerCase.includes(lowerCaseSearch) || employee.name.last.toLowerCase().includes(lowerCaseSearch)) {
-                return employee;
-            }
+            return(
+                employee.name.first.toLowerCase.includes(lowerCaseSearch)||employee.name.laste.toLowerCase.includes(lowerCaseSearch)            );
         });
         console.log(filteredEmployees);
         this.setState({ filteredEmployees: filteredEmployees });

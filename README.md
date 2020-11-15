@@ -64,6 +64,40 @@ Using react props, different keys can be called to fill in the DOM.
 <td>{props.keyName}</td>
 ```
 
+#### Changing the Table
+
+This component contains most of the workload of the program.
+Unlike the previous components, this one will extend React's Component.
+By extending, the program will be able to make use of state. State declares keys corresponding values or data types that will be referenced throughout the class.
+
+After declaring the state, several functions will be made.
+
+First is the componentDidMount function. This function will be called as soon as the page is ready to be loaded in. In this function, the list of employees instantiated in the state will be filled by the API. For the sake of demonstration, the api was taken from [randomuser.me](randomuser.me).
+
+The next function identifies the onChange called within the search bar. 
+*The code is shown below*
+
+```js
+    handleInputChange(event) {
+        event.preventDefault();
+        let { search } = this.state.search;
+        console.log(search);
+        const lowerCaseSearch = search.toLowerCase();
+        console.log(lowerCaseSearch);
+        let { employees } = this.state.employees;
+        console.log(employees);
+        let filteredEmployees = employees.filter(employee => {
+            if (employee.name.first.toLowerCase.includes(lowerCaseSearch) || employee.name.last.toLowerCase().includes(lowerCaseSearch)) {
+                return employee;
+            }
+        });
+        console.log(filteredEmployees);
+        this.setState({ filteredEmployees: filteredEmployees });
+        this.setState({ search: search });
+        this.setState({ sorted: true });
+    }
+```
+
 ## License
 
 This Project is licensed under the MIT License
