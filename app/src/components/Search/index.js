@@ -21,14 +21,19 @@ handleSubmit(event) {
         return employee;
         }
     });
-
+    this.setState({ filtered: filtered });
 }
 
-return (
-    <div>
-        <input placeholder="Search" onChange={handleSubmit} />
-    </div>
-);
+returnEmployees() {
+    return(
+        <div>
+            {this.state.filtered.map(employee => (
+                 
+            ))}
+        </div>
+    )
+}
+
 }
 export default Search;
 
