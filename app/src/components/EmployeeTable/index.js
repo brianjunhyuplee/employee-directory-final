@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SearchBar from "../SearchBar";
 import EmployeeTableTemplate from "../EmployeeTableTemplate.js"
+import Api from "../../utils/Api"
 
 class Search extends Component{
     state = {
@@ -41,5 +42,5 @@ returnEmployees() {
 }
 
 }
-export default Search;
+export default EmployeeTableTemplate;
 
