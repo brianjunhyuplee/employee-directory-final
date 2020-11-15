@@ -14,7 +14,7 @@ class Search extends Component{
 handleSubmit(event) {
     event.preventDefault();
 
-    this.setState({ search: inputRef.current.value });
+    let { search } = this.state.search;
     const lowerCaseEmployees = search.toLowerCase();
     let { employees } = this.state.employees;
     let filtered = employees.filter(employee => {
