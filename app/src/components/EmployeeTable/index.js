@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { useEmployeeContext } from "../EmployeeTable";
 import SearchBar from "../SearchBar";
 
 class Search extends Component{

@@ -11,6 +11,7 @@ const EmployeeContext = createContext({
 
 const { Provider } = EmployeeContext;
 
+
 function reducer (state, action) {
     switch (action.type) {
         //any needed functions
