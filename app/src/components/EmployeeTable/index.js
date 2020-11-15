@@ -1,30 +1,30 @@
 import React from "react";
-import { useEmployeeContext } from "./utils/GlobalState";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { useEmployeeContext } from "../../utils/GlobalState";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import { Container, Row, Col } from 'react-bootstrap/';
 
 function EmployeeTable() {
     const [state, dispatch] = useEmployeeContext();
 
     return (
-        <Container>
-            <Row>
-                <Col>Image</Col>
-                <Col>Name</Col>
-                <Col>Phone</Col>
-                <Col>Email</Col>
-                <Col>DOB</Col>
-            </Row>
+        <div class = "container">
+            <div class = "row">
+                <div class = "col">Image</div>
+                <div class = "col">Name</div>
+                <div class = "col">Phone</div>
+                <div class = "col">Email</div>
+                <div class = "col">DOB</div>
+            </div>
             {state.map((item, index) => (
-                <Row>
-                    <Col key={item.image}></Col>
-                    <Col key={item.name}></Col>
-                    <Col key={item.phoneNumber}></Col>
-                    <Col key={item.email}></Col>
-                    <Col key={item.birthday}></Col>
-                </Row>
+                <div class = "row">
+                    <div class = "col" key={item.image}></div>
+                    <div class = "col" key={item.name}></div>
+                    <div class = "col" key={item.phoneNumber}></div>
+                    <div class = "col" key={item.email}></div>
+                    <div class = "col" key={item.birthday}></div>
+                </div>
             ))}
-        </Container>
+        </div>
     );
 }
 

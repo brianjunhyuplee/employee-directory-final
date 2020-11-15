@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useEmployeeContext } from "../utils/GlobalState";
+import { useEmployeeContext } from "/Users/brianlee/Desktop/employee-directory-final/app/src/utils/GlobalState.js";
 
 function SearchBar() {
     const inputRef = useRef();
