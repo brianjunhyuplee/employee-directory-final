@@ -1,30 +1,32 @@
 import React, { Component } from "react";
-import { useEmployeeContext } from "/Users/brianlee/Desktop/employee-directory-final/app/src/utils/GlobalState.js";
+import { useEmployeeContext } from "../EmployeeTable";
+import SearchBar from "../SearchBar";
 
-function Search() {
+class Search extends Component{
     state = {
         employees: [{}],
         search: "",
         filteredEmployees: [{}],
-        order: "asc",
-        loading: true,
-
     }
-    const inputRef = useRef();
-    const [_, dispatch] = useEmployeeContext();
 
 
-function handleSubmit(event) {
+handleSubmit(event) {
     event.preventDefault();
 
-    this.setState({ search: inputRef.current.value.toLowerCase });
+    this.setState({ search: inputRef.current.value });
+    const lowerCaseEmployees = search.toLowerCase();
     let { employees } = this.state.employees;
+    let filtered = employees.filter(employee => {
+        if (employee.name.first.toLowerCase.includes(lowerCaseEmployees)||employee.name.last.toLowerCase().includes(lowerCaseEmployees)){
+        return employee;
+        }
+    });
 
 }
 
 return (
     <div>
-        <input ref={inputRef} placeholder="Search" onChange={handleSubmit} />
+        <input placeholder="Search" onChange={handleSubmit} />
     </div>
 );
 }

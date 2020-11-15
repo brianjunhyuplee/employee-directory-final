@@ -1,11 +1,12 @@
 import React, { createContext, useReducer, useContext } from "react";
 
 const EmployeeContext = createContext({
-    image: "",
-    name: "",
-    phoneNumber: "",
+    picture: "",
+    first: "",
+    last: "",
+    phone: "",
     email: "",
-    birthday: ""
+    dob: ""
 ,})
 
 const { Provider } = EmployeeContext;
