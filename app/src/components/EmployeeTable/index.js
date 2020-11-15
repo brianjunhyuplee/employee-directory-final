@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SearchBar from "../SearchBar";
+import EmployeeTableTemplate from "../EmployeeTableTemplate.js"
 
 class Search extends Component{
     state = {
@@ -27,7 +28,13 @@ returnEmployees() {
     return(
         <div>
             {this.state.filtered.map(employee => (
-                 
+                 <EmployeeTableTemplate
+                    picture = {employee.picture.medium}
+                    name = {employee.name.first+ " " + employee.name.last}
+                    phone = {employee.phone}
+                    email = {employee.email}
+                    dob = {employee.dob.date}
+                />
             ))}
         </div>
     )
