@@ -72,9 +72,9 @@ By extending, the program will be able to make use of state. State declares keys
 
 After declaring the state, several functions will be made.
 
-First is the componentDidMount function. This function will be called as soon as the page is ready to be loaded in. In this function, the list of employees instantiated in the state will be filled by the API. For the sake of demonstration, the api was taken from [randomuser.me](randomuser.me).
+First is the componentDidMount function. This function will be called as soon as the page is ready to be rendered. In this function, the list of employees instantiated in the state will be filled by the API. For the sake of demonstration, the api was taken from [randomuser.me](randomuser.me).
 
-The next function identifies the onChange called within the search bar. 
+The next function identifies the onChange called within the search bar. This function is called within the render, and will be the first one called when the search bar is changed.
 *The code is shown below*
 
 ```js
@@ -95,6 +95,8 @@ The next function identifies the onChange called within the search bar.
 ```
 
 A basic understanding of this code is to first take the input from the search bar and make it lower case, for consistency. By running a filter on the array of employees from the state and comparing to the search parameter, a new array of filtered employees is created.
+
+The last function will take the filtered array and call on the table component to convert the data into jsx, readable by react.
 
 ## License
 
