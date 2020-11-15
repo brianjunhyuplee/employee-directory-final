@@ -2,6 +2,14 @@ import React, { useRef } from "react";
 import { useEmployeeContext } from "/Users/brianlee/Desktop/employee-directory-final/app/src/utils/GlobalState.js";
 
 function SearchBar() {
+    state = {
+        employees: [{}],
+        search: "",
+        filteredEmployees: [{}],
+        order: "asc",
+        loading: true,
+
+    }
     const inputRef = useRef();
     const [_, dispatch] = useEmployeeContext();
 
@@ -9,16 +17,14 @@ function SearchBar() {
 function handleSubmit(event) {
     event.preventDefault();
 
-    dispatch({
-        type: "add",
-        name: inputRef.current.value
-    });
-    inputRef.current.value = "";
+    this.setState({ search: inputRef.current.value.toLowerCase() });
+    let { employees } = this.state.employees;
+
 }
 
 return (
     <div>
-        <input ref={inputRef} placeholder="Search" />
+        <input ref={inputRef} placeholder="Search" onChange={handleSubmit} />
     </div>
 );
 }
