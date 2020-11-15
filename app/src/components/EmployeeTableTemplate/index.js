@@ -4,15 +4,14 @@ import React from "react";
 function EmployeeTableTemplate(props) {
 return (
   <div>
-    
     <table>
       <tbody>
       <tr>
           <td className="text-center" scope="col">Employee</td>
-          <td className="text-center" scope="col">Name</td>
-          <td className="text-center" scope="col">Phone</td>
-          <td className="text-center" scope="col">Email</td>
-          <td className="text-center" scope="col">DOB</td>
+          <td className="text-center" scope="col" onClick={props.handleClick}>Name</td>
+          <td className="text-center" scope="col" onClick={props.handleClick}>Phone</td>
+          <td className="text-center" scope="col"onClick={props.handleClick}>Email</td>
+          <td className="text-center" scope="col"onClick={props.handleClick}>DOB</td>
         </tr>
         <tr>
           <td className="text-center" scope="col"><img src={props.picture}/></td>

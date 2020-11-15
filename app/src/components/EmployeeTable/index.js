@@ -8,6 +8,7 @@ class EmployeeTable extends Component {
         employees: [{}],
         search: "",
         filteredEmployees: [{}],
+        sortBy: "asc",
         sorted: false,
     }
     //use componentDidMount to require Dom Nodes
