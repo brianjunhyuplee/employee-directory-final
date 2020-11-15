@@ -87,16 +87,14 @@ The next function identifies the onChange called within the search bar.
         let { employees } = this.state.employees;
         console.log(employees);
         let filteredEmployees = employees.filter(employee => {
-            if (employee.name.first.toLowerCase.includes(lowerCaseSearch) || employee.name.last.toLowerCase().includes(lowerCaseSearch)) {
-                return employee;
-            }
+           return(
+                employee.name.first.toLowerCase.includes(lowerCaseSearch)||employee.name.laste.toLowerCase.includes(lowerCaseSearch)
+           );
         });
-        console.log(filteredEmployees);
-        this.setState({ filteredEmployees: filteredEmployees });
-        this.setState({ search: search });
-        this.setState({ sorted: true });
     }
 ```
+
+A basic understanding of this code is to first take the input from the search bar and make it lower case, for consistency. By running a filter on the array of employees from the state and comparing to the search parameter, a new array of filtered employees is created.
 
 ## License
 
